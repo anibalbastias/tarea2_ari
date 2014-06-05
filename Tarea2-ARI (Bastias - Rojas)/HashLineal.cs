@@ -249,11 +249,15 @@ namespace Tarea2_ARI__Bastias___Rojas_
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public bool Remove(Tkey key)
+        /// 
+
+
+        /*public bool Remove(Tkey key)
         {
             throw new NotImplementedException();
             return false;
         }
+        */
 
         /// <summary>
         /// Tries to get the value associated with the key.

@@ -8,6 +8,7 @@
             <Button x:Name="btnProductos" Content="Productos" HorizontalAlignment="Left" Margin="214,133,0,0" VerticalAlignment="Top" Width="177" Height="127" Click="btnProductos_Click"/>
             <Button x:Name="btnFuncionarios" Content="Funcionarios" HorizontalAlignment="Left" Margin="422,133,0,0" VerticalAlignment="Top" Width="177" Height="127" Click="btnFuncionarios_Click"/>
             <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="422,304,0,-64" VerticalAlignment="Top" Width="177" Height="30" RenderTransformOrigin="1.862,-0.636" Click="btnSalir_Click"/>
+            <Button x:Name="btnInicializar" Content="Inicializar" Click="btnInicializar_Click" Margin="10,304,436,-64" Width="177" Height="30" />
             <TextBlock x:Name="txtPrincipal" HorizontalAlignment="Left" Margin="0,28,-1,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="624" FontSize="36" TextAlignment="Center"><Run Language="es-cl" Text="KIOSKO SYSTEM - MENU PRINCIPAL"/></TextBlock>
         </Grid>
 

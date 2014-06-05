@@ -36,6 +36,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
             //Lee archivo 
 
+            /*
             const string fic = @"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\productos.txt";
             string texto;
 
@@ -59,7 +60,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
             file.Close();
 
-
+            */
         }
 
         private void btnVentas_Click(object sender, RoutedEventArgs e)

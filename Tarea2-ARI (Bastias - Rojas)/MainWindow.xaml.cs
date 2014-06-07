@@ -21,6 +21,8 @@ namespace Tarea2_ARI__Bastias___Rojas_
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string path = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
         public MainWindow()
         {
             InitializeComponent();
@@ -57,8 +59,8 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
         private void btnInicializar_Click(object sender, RoutedEventArgs e)
         {
-
-            const string fic = @"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\assets\productos.txt";  //lee el archivo productos.txt               
+            
+            string fic = path+@"\assets\productos.txt";  //lee el archivo productos.txt               
 
             System.IO.StreamReader sr = new System.IO.StreamReader(fic);  //carga el fichero en la variable sr para poder manipularlo
 
@@ -91,14 +93,14 @@ namespace Tarea2_ARI__Bastias___Rojas_
                 valor = Convert.ToInt32(sub_string); // convierte el numero string a numero int
                 binary = Convert.ToString(valor, 2); // convierte el entero a binario
 
-                if (System.IO.File.Exists(@"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\assets\resultado" + j + ".txt"))
+                if (System.IO.File.Exists(path + @"\assets\resultado" + j + ".txt"))
                 {
 
 
-                    if (Contador(@"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\assets\resultado" + j + ".txt") < capacidad)
+                    if (Contador(path + @"\assets\resultado" + j + ".txt") < capacidad)
                     {
 
-                        f = new FileInfo(@"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\assets\resultado" + j + ".txt");
+                        f = new FileInfo(path + @"\assets\resultado" + j + ".txt");
 
                         writer = f.AppendText();
                         writer.WriteLine(texto);
@@ -108,7 +110,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
                     else
                     {
 
-                        f = new FileInfo(@"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\assets\resultado" + j + ".txt");
+                        f = new FileInfo(path + @"\assets\resultado" + j + ".txt");
 
 
 
@@ -122,7 +124,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
                 }
                 else
                 {
-                    f = new FileInfo(@"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\assets\resultado" + j + ".txt");
+                    f = new FileInfo(path + @"\assets\resultado" + j + ".txt");
 
 
                     writer = f.AppendText();

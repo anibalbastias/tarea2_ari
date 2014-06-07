@@ -52,3 +52,30 @@ C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tare
 C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).g.resources
 C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2_ARI__Bastias___Rojas_.Properties.Resources.resources
 C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).csproj.GenerateResource.Cache
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\bin\Debug\Tarea2-ARI (Bastias - Rojas).exe.config
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).exe
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).pdb
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\bin\Debug\Tarea2-ARI (Bastias - Rojas).exe
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\bin\Debug\Tarea2-ARI (Bastias - Rojas).pdb
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).csprojResolveAssemblyReference.cache
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\FuncionariosWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\IngresarFuncionarioWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\IngresarProductoWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\ListarFuncionariosWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\ListarProductosWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\MainWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\ProductosWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\VentasWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\FuncionariosWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\IngresarFuncionarioWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\IngresarProductoWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\ListarFuncionariosWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\ListarProductosWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\MainWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\ProductosWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\VentasWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\App.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas)_MarkupCompile.cache
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).g.resources
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2_ARI__Bastias___Rojas_.Properties.Resources.resources
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).csproj.GenerateResource.Cache

@@ -62,8 +62,13 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
             System.IO.StreamReader sr = new System.IO.StreamReader(fic);  //carga el fichero en la variable sr para poder manipularlo
 
+<<<<<<< HEAD
             // inicializacion de variables
             int i = 0;
+=======
+            /*
+            const string fic = @"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\productos.txt";
+>>>>>>> e6021d6e94c375e3fdcb7d735e0d81ba2c8a8d1e
             string texto;
             int ocurrencia = 0;
             int valor;
@@ -140,7 +145,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
             sr.Close();
 
 
-
+            */
         }
 
         private void btnVentas_Click(object sender, RoutedEventArgs e)

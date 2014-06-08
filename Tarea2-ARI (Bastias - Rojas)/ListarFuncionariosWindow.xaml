@@ -11,9 +11,22 @@
                     <GridView>
                         <GridViewColumn Header="Nº" Width="25" DisplayMemberBinding="{Binding Num}" />
                         <GridViewColumn Header="RUT" Width="80" DisplayMemberBinding="{Binding Rut}" />
-                        <GridViewColumn Header="Nombre Completo" Width="180" DisplayMemberBinding="{Binding Nombre}" />
-                        <GridViewColumn Header="Carrera" Width="150" DisplayMemberBinding="{Binding Carrera}" />
-                        <GridViewColumn Header="" Width="118" DisplayMemberBinding="{Binding Opciones}" />
+                        <GridViewColumn Header="Nombre Completo" Width="150" DisplayMemberBinding="{Binding Nombre}" />
+                        <GridViewColumn Header="Carrera" Width="160" DisplayMemberBinding="{Binding Carrera}" />
+                        <GridViewColumn Header="" Width="60" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Ver" Width="40" Height="30" Click="verFuncionario" CommandParameter="{Binding}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="" Width="60" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Editar" Width="40" Height="30" Click="editarFuncionario" CommandParameter="{Binding}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

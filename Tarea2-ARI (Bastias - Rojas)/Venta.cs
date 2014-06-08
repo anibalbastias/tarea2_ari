@@ -8,12 +8,12 @@ namespace Tarea2_ARI__Bastias___Rojas_
 {
     class Venta
     {
-        public int id;
-        public int id_producto;
-        public int id_funcionario;
-        public int cantidad;
-        public string fecha;
-        public string hora;
+        public int id { get; set; }
+        public int id_producto { get; set; }
+        public int id_funcionario { get; set; }
+        public int cantidad { get; set; }
+        public string fecha { get; set; }
+        public string hora { get; set; }
 
         public Venta()
         {

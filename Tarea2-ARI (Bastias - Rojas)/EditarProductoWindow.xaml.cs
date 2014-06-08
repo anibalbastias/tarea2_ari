@@ -15,38 +15,49 @@ using System.Windows.Shapes;
 namespace Tarea2_ARI__Bastias___Rojas_
 {
     /// <summary>
-    /// Lógica de interacción para IngresarProductoWindow.xaml
+    /// Lógica de interacción para EditarProductoWindow.xaml
     /// </summary>
-    public partial class IngresarProductoWindow : Window
+    public partial class EditarProductoWindow : Window
     {
-        //HashLineal<4,4> hl = new HashLineal<4,4>();
 
-        public IngresarProductoWindow()
+        public EditarProductoWindow()
         {
             InitializeComponent();
             llenarTipoProducto();
         }
 
+        // Sobrecarga de metodo
+        public EditarProductoWindow(string nombre, string tipo, string precio, string stock)
+        {
+            InitializeComponent();
+            llenarTipoProducto();
+
+            txtBlockNombre.Text = nombre;
+            comboTipo.Text = tipo;
+            txtBoxPrecio.Text = precio;
+            txtBoxStock.Text = stock;
+        }
+
         private void llenarTipoProducto()
         {
             ComboBoxItem cboxitem1 = new ComboBoxItem();
-            cboxitem1.Content = "Bebestible";
+            cboxitem1.Content = "Bebestible".ToUpper();
             comboTipo.Items.Add(cboxitem1);
 
             ComboBoxItem cboxitem2 = new ComboBoxItem();
-            cboxitem2.Content = "Confiteria";
+            cboxitem2.Content = "Confiteria".ToUpper();
             comboTipo.Items.Add(cboxitem2);
 
             ComboBoxItem cboxitem3 = new ComboBoxItem();
-            cboxitem3.Content = "Lacteos";
+            cboxitem3.Content = "Lacteo".ToUpper();
             comboTipo.Items.Add(cboxitem3);
 
             ComboBoxItem cboxitem4 = new ComboBoxItem();
-            cboxitem4.Content = "Cigarros";
+            cboxitem4.Content = "Cigarros".ToUpper();
             comboTipo.Items.Add(cboxitem4);
 
             ComboBoxItem cboxitem5 = new ComboBoxItem();
-            cboxitem5.Content = "Masas";
+            cboxitem5.Content = "Masas".ToUpper();
             comboTipo.Items.Add(cboxitem5);
         }
 
@@ -61,13 +72,13 @@ namespace Tarea2_ARI__Bastias___Rojas_
                 Producto prod1 = new Producto(txtBlockNombre.Text.ToString(), comboTipo.Text.ToString(),
                     Int32.Parse(txtBoxPrecio.Text.ToString()), Int32.Parse(txtBoxStock.Text.ToString()));
 
-                //hl.insertarProducto(prod1);
+                //hl.editarProducto(prod1);
 
                 ProductosWindow window = new ProductosWindow();
                 window.Show();
                 this.Close();
 
-                MessageBox.Show("Producto insertado correctamente");
+                MessageBox.Show("Producto actualizado correctamente");
             }
             else
             {
@@ -119,7 +130,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            ProductosWindow window = new ProductosWindow();
+            ListarProductosWindow window = new ListarProductosWindow();
             window.Show();
             this.Close();
         }

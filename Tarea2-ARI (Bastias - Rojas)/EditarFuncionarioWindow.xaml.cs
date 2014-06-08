@@ -19,12 +19,35 @@ namespace Tarea2_ARI__Bastias___Rojas_
     /// <summary>
     /// Lógica de interacción para IngresarFuncionarioWindow.xaml
     /// </summary>
-    public partial class IngresarFuncionarioWindow : Window
+    public partial class EditarFuncionarioWindow : Window
     {
         Funcionario func = new Funcionario();
         HashEstatico he = new HashEstatico();
 
-        public IngresarFuncionarioWindow()
+        // SobreCarga de Metodo para Editar Funcionario
+        public EditarFuncionarioWindow(string rut, string nombre, string carrera)
+        {
+            InitializeComponent();
+            loadCarreras();
+
+            // Split Rut
+            string[] rut1 = rut.Split('-');
+            string[] nombre1 = nombre.Split(' ');
+
+            txtBoxRut.Text = rut1[0];
+            txtBoxRut.IsEnabled = false;
+
+            txtBoxRutDV.Text = rut1[1];
+            txtBoxRutDV.IsEnabled = false;
+
+            txtBoxNombre.Text = nombre1[0];
+            txtBoxApPaterno.Text = nombre1[1];
+            txtBoxApMaterno.Text = nombre1[2];
+
+            comboCarrera.Text = carrera;
+        }
+
+        public EditarFuncionarioWindow()
         {
             InitializeComponent();
             loadCarreras();
@@ -32,13 +55,13 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            FuncionariosWindow window = new FuncionariosWindow();
+            ListarFuncionariosWindow window = new ListarFuncionariosWindow();
             window.Show();
             this.Close();
         }
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
-        {       
+        {
             // Comparar Digitos verificadores como char
             char dv, dv1;
 
@@ -60,13 +83,14 @@ namespace Tarea2_ARI__Bastias___Rojas_
                         txtBoxNombre.Text.ToString(), txtBoxApPaterno.Text.ToString(),
                         txtBoxApMaterno.Text.ToString(), comboCarrera.Text.ToString());
 
-                    he.insertarFuncionario(func1);
+                    //he.modificarFuncionario(func1);
+                    he.modificarFuncionario(func1);
 
                     FuncionariosWindow window = new FuncionariosWindow();
                     window.Show();
                     this.Close();
 
-                    MessageBox.Show("Funcionario insertado correctamente");
+                    MessageBox.Show("Funcionario actualizado correctamente");
 
                 }
                 else
@@ -158,7 +182,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
             {
                 MessageBox.Show("Debe ingresar Digito Verficador de RUT");
                 String e2 = e1.ToString();
-            }   
+            }
         }
 
         private void txtBoxRut_TextChanged_1(object sender, TextChangedEventArgs e)

@@ -27,32 +27,26 @@ namespace Tarea2_ARI__Bastias___Rojas_
             InitializeComponent();
 
             // Instanciar Tabla 
-
-            /*
-            List<User> items = new List<User>();
-            items.Add(new User() { Num = "1", Rut = "16846047-3", Nombre = "Anibal Bastias Soto", Carrera = "Ingenieria Informatica"});
-            items.Add(new User() { Num = "2", Rut = "7271029-0", Nombre = "Morelia Soto Ahumada", Carrera = "Pedagogia General Basica"});
-            items.Add(new User() { Num = "3", Rut = "19017217-1", Nombre = "Sandra Orellana Rivera", Carrera ="Trabajo Social" });
-            listViewUsuarios.ItemsSource = items;
-            */
-
             string arreglo = he.listaFuncionarios();
             string[] arr1 = arreglo.Split('\n');
             List<User> items = new List<User>();
 
+            int j = 1;
+            
             for (int i = 0; i < arr1.Length; i++)
             {
+                Button b = new Button();
+                b.Name = "Ver";
+
                 if (!arr1[i].Equals(""))
                 {
                     string[] arr2 = arr1[i].Split('&');
-                    items.Add(new User() { Num = i + 1, Rut = arr2[0], Nombre = arr2[1] + " " + arr2[2] + " " + arr2[3], Carrera = arr2[4] });
+                    items.Add(new User() { Num = j, Rut = arr2[0], Nombre = arr2[1] + " " + arr2[2] + " " + arr2[3], Carrera = arr2[4].Replace("\r",""), Opciones = b});
+                    j++;
                 }
                 
             }
             listViewUsuarios.ItemsSource = items;
-
-            MessageBox.Show(arreglo);
-
         }
 
         public class User
@@ -61,7 +55,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
             public string Rut { get; set; }
             public string Nombre { get; set; }
             public string Carrera { get; set; }
-            public string Opciones { get; set; }
+            public Button Opciones { get; set; }
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
@@ -71,5 +65,24 @@ namespace Tarea2_ARI__Bastias___Rojas_
             this.Close();
         }
 
+        private void verFuncionario(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            User funcionario = b.CommandParameter as User;
+            MessageBox.Show("RUT:\t"+funcionario.Rut+"\n"+
+                            "Nombre:\t"+funcionario.Nombre+"\n"+
+                            "Carrera:\t"+funcionario.Carrera+"\n"
+                            );
+        }
+
+        private void editarFuncionario(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            User funcionario = b.CommandParameter as User;
+            
+            EditarFuncionarioWindow window = new EditarFuncionarioWindow(funcionario.Rut,funcionario.Nombre, funcionario.Carrera);
+            window.Show();
+            this.Close();
+        }
     }
 }

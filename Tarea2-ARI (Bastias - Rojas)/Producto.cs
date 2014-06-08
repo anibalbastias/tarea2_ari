@@ -8,11 +8,11 @@ namespace Tarea2_ARI__Bastias___Rojas_
 {
     class Producto
     {
-        public int id;
-        public string nombre;
-        public string tipo;
-        public int precio;
-        public int stock;
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string tipo { get; set; }
+        public int precio { get; set; }
+        public int stock { get; set; }
 
         public Producto()
         {
@@ -23,9 +23,8 @@ namespace Tarea2_ARI__Bastias___Rojas_
             this.stock = 0;
         }
 
-        public Producto(int id, string nombre, string tipo, int precio, int stock)
+        public Producto(string nombre, string tipo, int precio, int stock)
         {
-            this.id = id;
             this.nombre = nombre;
             this.tipo = tipo;
             this.precio = precio;

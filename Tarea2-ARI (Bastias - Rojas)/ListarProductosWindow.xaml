@@ -7,7 +7,31 @@
             <Grid HorizontalAlignment="Left" Height="270" Margin="36,10,0,0" VerticalAlignment="Top" Width="623">
                 <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="422,304,0,-64" VerticalAlignment="Top" Width="177" Height="30" RenderTransformOrigin="1.862,-0.636" Click="btnVolver_Click"/>
                 <TextBlock x:Name="txtPrincipal" HorizontalAlignment="Left" Margin="22,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="577" FontSize="32" TextAlignment="Center"><Run Language="es-cl" Text="KIOSKO SYSTEM - LISTAR PRODUCTOS"/></TextBlock>
-                <ListBox HorizontalAlignment="Left" Height="197" Margin="22,93,0,-20" VerticalAlignment="Top" Width="577"/>
+                <ListView Margin="35,84,24,-11" x:Name="listViewUsuarios">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Nº" Width="25" DisplayMemberBinding="{Binding Num}" />
+                            <GridViewColumn Header="Nombre" Width="130" DisplayMemberBinding="{Binding Nombre}" />
+                            <GridViewColumn Header="Tipo" Width="130" DisplayMemberBinding="{Binding Tipo}" />
+                            <GridViewColumn Header="Precio" Width="70" DisplayMemberBinding="{Binding Precio}" />
+                            <GridViewColumn Header="Stock" Width="60" DisplayMemberBinding="{Binding Stock}" />
+                            <GridViewColumn Header="" Width="60" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Ver" Width="40" Height="30" Click="verProducto" CommandParameter="{Binding}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="" Width="60" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Editar" Width="40" Height="30" Click="editarProducto" CommandParameter="{Binding}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </Grid>
 
         </Grid>

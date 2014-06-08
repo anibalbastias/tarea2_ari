@@ -41,8 +41,8 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
             StreamWriter sw = new StreamWriter(stream);
             String registro;
-            registro = funcionario.getRut() + "-" + funcionario.getDV() + "&" + funcionario.getNombre() + "&" + 
-                funcionario.getApellidoPat() + "&" + funcionario.getCarrera();
+            registro = funcionario.getRut() + "-" + funcionario.getDV() + "&" + funcionario.getNombre() + "&" +
+                funcionario.getApellidoPat() + "&" + funcionario.getApellidoMat() + "&" + funcionario.getCarrera();
 
             //Escribimos la persona en el archivo
             sw.WriteLine(registro);
@@ -52,122 +52,15 @@ namespace Tarea2_ARI__Bastias___Rojas_
             int hashing = funcionario.getRut();
             hashing = hashing % 10;
             //String saveNow = DateTime.Now.ToString();
-            String line = funcionario.getRut() + "-" + funcionario.getDV() + "&" + funcionario.getNombre() + "&" + 
-                funcionario.getApellidoPat() + "&" + funcionario.getApellidoMat() + "&" + funcionario.getCarrera();
 
-            if (hashing == 0)
-            {
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico0.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico0.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
+            // Realizacion de Insercion en Hashing
 
-            }
-
-            if (hashing == 1)
-            {
-
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico1.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico1.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 2)
-            {
-                //FileStream fs = new FileStream((@"C:\Users\Marcos\Desktop\2.txt"));
-
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico2.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico2.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 3)
-            {
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico3.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico3.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 4)
-            {
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico4.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico4.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 5)
-            {
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico5.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico5.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 6)
-            {
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico6.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico6.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 7)
-            {
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico7.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico7.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 8)
-            {
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico8.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico9.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
-
-            if (hashing == 9)
-            {
-
-                StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico9.txt");
-                line = leer.ReadToEnd() + line;
-                leer.Close();
-                StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico9.txt");
-                escribir.WriteLine(line);
-                escribir.Close();
-
-            }
+            StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico" + hashing + ".txt");
+            registro = leer.ReadToEnd() + registro;
+            leer.Close();
+            StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico" + hashing + ".txt");
+            escribir.WriteLine(registro);
+            escribir.Close();
         }
 
         public string listaFuncionarios()
@@ -179,21 +72,62 @@ namespace Tarea2_ARI__Bastias___Rojas_
                 if (i == 0)
                 {
                     StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico" + i + ".txt");
-                    if (!leer.ReadToEnd().Equals(""))
-                        arreglo = leer.ReadToEnd();
+                    arreglo = leer.ReadToEnd();
                     leer.Close();
                 }
                 else
                 {
                     StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico" + i + ".txt");
-
-                    if(!leer.ReadToEnd().Equals(""))
-                        arreglo = arreglo+"\n"+leer.ReadToEnd();
+                    arreglo = arreglo+"\n"+leer.ReadToEnd();
                     leer.Close();
                 }
             }
 
             return arreglo;
+        }
+
+        internal void modificarFuncionario(Funcionario funcionario)
+        {
+            try //Util para manejar exepciones
+            {
+                //Abre o crea el archivo en modo lectura-escritura
+                stream = new FileStream(this.filename, FileMode.Create, FileAccess.Write);
+                this.abierto = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error en la apertura de \"{0}\": {1}", filename, e.ToString());
+            }
+
+            if (!abierto)
+            {
+                // Si no esta abierto, no hay que escribir.
+                return;
+            }
+
+            StreamWriter sw = new StreamWriter(stream);
+            String registro;
+            registro = funcionario.getRut() + "-" + funcionario.getDV() + "&" + funcionario.getNombre() + "&" +
+                funcionario.getApellidoPat() + "&" + funcionario.getApellidoMat() + "&" + funcionario.getCarrera();
+
+            //Escribimos la persona en el archivo
+            sw.WriteLine(registro);
+            sw.Close();
+            stream.Close();
+
+            int hashing = funcionario.getRut();
+            hashing = hashing % 10;
+            
+            // Realizacion de Insercion en Hashing
+
+            StreamReader leer = new StreamReader(mw.path + @"\assets\hashing_estatico\estatico" + hashing + ".txt");
+            registro = leer.ReadToEnd() + registro;
+            leer.Close();
+
+            StreamWriter escribir = new StreamWriter(mw.path + @"\assets\hashing_estatico\estatico" + hashing + ".txt");
+            escribir.WriteLine(registro);
+            escribir.Close();
+
         }
     }
 }

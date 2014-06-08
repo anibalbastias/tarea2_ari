@@ -8,12 +8,12 @@ namespace Tarea2_ARI__Bastias___Rojas_
 {
     class Funcionario
     {
-        public int rut;
-        public string dv;
-        public string nombre;
-        public string apellido_pat;
-        public string apellido_mat;
-        public string carrera;
+        public int rut { get; set; }
+        public string dv { get; set; }
+        public string nombre { get; set; }
+        public string apellido_pat { get; set; }
+        public string apellido_mat { get; set; }
+        public string carrera { get; set; }
 
         public Funcionario()
         {

@@ -79,3 +79,7 @@ C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2
 C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).g.resources
 C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2_ARI__Bastias___Rojas_.Properties.Resources.resources
 C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\Tarea2-ARI (Bastias - Rojas).csproj.GenerateResource.Cache
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\EditarFuncionarioWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\EditarFuncionarioWindow.g.cs
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\EditarProductoWindow.baml
+C:\Users\Anibal\Desktop\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\obj\Debug\EditarProductoWindow.g.cs

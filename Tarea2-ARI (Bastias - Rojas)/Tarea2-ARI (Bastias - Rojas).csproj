@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EditarFuncionarioWindow.xaml.cs">
+      <DependentUpon>EditarFuncionarioWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditarProductoWindow.xaml.cs">
+      <DependentUpon>EditarProductoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Funcionario.cs" />
     <Compile Include="HashEstatico.cs" />
     <Compile Include="HashLineal.cs" />
@@ -64,6 +70,14 @@
     <Compile Include="VentasWindow.xaml.cs">
       <DependentUpon>VentasWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="EditarFuncionarioWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditarProductoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FuncionariosWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

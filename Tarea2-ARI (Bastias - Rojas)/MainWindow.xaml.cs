@@ -30,7 +30,14 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //this.Close();
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("¿Desea salir de la aplicación?", "Confirmación Salida", System.Windows.MessageBoxButton.YesNo);
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                //Si respondo yes entro aca
+                this.Close();
+            }
         }
 
         public static int Contador(string RUTA){
@@ -65,7 +72,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
             System.IO.StreamReader sr = new System.IO.StreamReader(fic);  //carga el fichero en la variable sr para poder manipularlo
 
             // inicializacion de variables
-            int i = 0;
+            //int i = 0;
             string texto;
             int ocurrencia = 0;
             int valor;

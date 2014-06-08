@@ -1,7 +1,4 @@
-16846047-3&asd&asd&Ingenieria Civil
-16846047-3&Anibal&Bastias&Ingenieria Informatica
-7271029-0&Morelia&Soto&Ingenieria Civil Electrica
-1212-2&asssssssssssssssssss&ssssssssssssssssssss&Ingenieria Civil Electronica
-16846047-3&Anibal&Bastias&Ingenieria Informatica
-7271029-0&Morelia&Soto&Ingenieria Civil Informatica
-19017217-1&Sandra&Orellana&Construccion Civil
+17834508-7&Armando&Casas&Ingenieria Civil Ambiental
+11180775-2&Rosario&Abatista&Ingenieria Civil Electronica
+11180775-2&Rosario&Abatista&Ingenieria Civil Electrica
+11180775-2&Rosario&Abatista&Muñoz&Ingenieria Civil Electrica

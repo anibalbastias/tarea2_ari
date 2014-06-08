@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +21,9 @@ namespace Tarea2_ARI__Bastias___Rojas_
     /// </summary>
     public partial class IngresarFuncionarioWindow : Window
     {
+        Funcionario func = new Funcionario();
+        HashEstatico he = new HashEstatico();
+
         public IngresarFuncionarioWindow()
         {
             InitializeComponent();
@@ -133,8 +138,286 @@ namespace Tarea2_ARI__Bastias___Rojas_
         }
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
-        {
+        {       
+            // Comparar Digitos verificadores como char
+            char dv, dv1;
 
+            try
+            {
+                dv = func.calcula_dvrut(Int32.Parse(txtBoxRut.Text.ToString()));
+                dv1 = Convert.ToChar(txtBoxRutDV.Text.ToString());
+
+                if (!String.IsNullOrEmpty(txtBoxRut.Text) &&
+                !String.IsNullOrEmpty(txtBoxRutDV.Text) &&
+                !String.IsNullOrEmpty(txtBoxNombre.Text) &&
+                !String.IsNullOrEmpty(txtBoxApPaterno.Text) &&
+                !String.IsNullOrEmpty(txtBoxApMaterno.Text) &&
+                !String.IsNullOrEmpty(comboCarrera.Text) &&
+                dv == dv1
+                )
+                {
+                    /*
+                    MessageBox.Show("Datos: \n" +
+                    txtBoxRut.Text + "-" + txtBoxRutDV.Text + "\n" +
+                    txtBoxNombre.Text + "\n" +
+                    txtBoxApPaterno.Text + "\n" +
+                    txtBoxApMaterno.Text + "\n" +
+                    comboCarrera.Text + "\n"
+                    );
+                    */
+
+                    Funcionario func1 = new Funcionario(Int32.Parse(txtBoxRut.Text.ToString()), txtBoxRutDV.Text.ToString(),
+                        txtBoxNombre.Text.ToString(), txtBoxApPaterno.Text.ToString(),
+                        txtBoxApMaterno.Text.ToString(), comboCarrera.Text.ToString());
+
+                    he.insertarFuncionario(func1);
+
+                    FuncionariosWindow window = new FuncionariosWindow();
+                    window.Show();
+                    this.Close();
+
+                    MessageBox.Show("Funcionario insertado correctamente");
+
+                }
+                else
+                {
+                    // Rut
+                    if (txtBoxRut.Text.Trim().Length == 0)
+                    {
+                        imageError1.Visibility = Visibility.Visible;
+                        txtError1.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        imageError1.Visibility = Visibility.Hidden;
+                        txtError1.Visibility = Visibility.Hidden;
+                    }
+
+                    // RutDV
+                    if (txtBoxRutDV.Text.Trim().Length == 0)
+                    {
+                        imageError1.Visibility = Visibility.Visible;
+                        txtError1.Visibility = Visibility.Visible;
+                        txtError1.Text = "Digito Verificador Requerido";
+                    }
+                    else
+                    {
+                        imageError1.Visibility = Visibility.Hidden;
+                        txtError1.Visibility = Visibility.Hidden;
+                    }
+
+                    if (dv != dv1)
+                    {
+                        imageError1.Visibility = Visibility.Visible;
+                        txtError1.Visibility = Visibility.Visible;
+                        txtError1.Text = "Digito Verificador Incorrecto";
+                    }
+
+
+                    // Nombre
+                    if (txtBoxNombre.Text.Trim().Length == 0)
+                    {
+                        imageError2.Visibility = Visibility.Visible;
+                        txtError2.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        imageError2.Visibility = Visibility.Hidden;
+                        txtError2.Visibility = Visibility.Hidden;
+                    }
+
+                    // Apellido Paterno
+                    if (txtBoxApPaterno.Text.Trim().Length == 0)
+                    {
+                        imageError3.Visibility = Visibility.Visible;
+                        txtError3.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        imageError3.Visibility = Visibility.Hidden;
+                        txtError3.Visibility = Visibility.Hidden;
+                    }
+
+                    // Apellido Materno
+                    if (txtBoxApMaterno.Text.Trim().Length == 0)
+                    {
+                        imageError4.Visibility = Visibility.Visible;
+                        txtError4.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        imageError4.Visibility = Visibility.Hidden;
+                        txtError4.Visibility = Visibility.Hidden;
+                    }
+
+                    // Carrera
+
+                    if (String.IsNullOrEmpty(comboCarrera.Text))
+                    {
+                        imageError5.Visibility = Visibility.Visible;
+                        txtError5.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        imageError5.Visibility = Visibility.Hidden;
+                        txtError5.Visibility = Visibility.Hidden;
+                    }
+                }
+            }
+            catch (FormatException e1)
+            {
+                MessageBox.Show("Debe ingresar Digito Verficador de RUT");
+                String e2 = e1.ToString();
+            }   
+        }
+
+        private void txtBoxRut_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            // Form Validation
+
+            // Rut
+            if (txtBoxRut.Text.Trim().Length == 0)
+            {
+                imageError1.Visibility = Visibility.Visible;
+                txtError1.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                imageError1.Visibility = Visibility.Hidden;
+                txtError1.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txtBoxNombre_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            // Nombre
+            if (txtBoxNombre.Text.Trim().Length == 0)
+            {
+                imageError2.Visibility = Visibility.Visible;
+                txtError2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                imageError2.Visibility = Visibility.Hidden;
+                txtError2.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txtBoxApPaterno_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            // Apellido Paterno
+            if (txtBoxApPaterno.Text.Trim().Length == 0)
+            {
+                imageError3.Visibility = Visibility.Visible;
+                txtError3.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                imageError3.Visibility = Visibility.Hidden;
+                txtError3.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txtBoxApMaterno_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            // Apellido Materno
+            if (txtBoxApMaterno.Text.Trim().Length == 0)
+            {
+                imageError4.Visibility = Visibility.Visible;
+                txtError4.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                imageError4.Visibility = Visibility.Hidden;
+                txtError4.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txtBoxRut_PreviewTextInput_1(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBoxRutDV_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            // Rut
+            if (txtBoxRut.Text.Trim().Length == 0)
+            {
+                imageError1.Visibility = Visibility.Visible;
+                txtError1.Visibility = Visibility.Visible;
+                txtError1.Text = "Digito Verificador Requerido";
+            }
+            else
+            {
+                imageError1.Visibility = Visibility.Hidden;
+                txtError1.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txtBoxRutDV_PreviewTextInput_1(object sender, TextCompositionEventArgs e)
+        {
+            //if (!char.IsDigit(e.Text, e.Text.Length - 1))
+            if (System.Text.RegularExpressions.Regex.IsMatch(e.Text, @"[^0-9^+^K^k]"))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboCarrera_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            // Carrera
+            if (comboCarrera.Text.Trim().Length == 0)
+            {
+                imageError5.Visibility = Visibility.Visible;
+                txtError5.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                imageError5.Visibility = Visibility.Hidden;
+                txtError5.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void comboCarrera_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Carrera
+            if (comboCarrera.Text.Trim().Length == 0)
+            {
+                imageError5.Visibility = Visibility.Visible;
+                txtError5.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                imageError5.Visibility = Visibility.Hidden;
+                txtError5.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txtBoxNombre_PreviewTextInput_1(object sender, TextCompositionEventArgs e)
+        {
+            if (char.IsDigit(e.Text, e.Text.Length - 1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBoxApPaterno_PreviewTextInput_1(object sender, TextCompositionEventArgs e)
+        {
+            if (char.IsDigit(e.Text, e.Text.Length - 1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBoxApMaterno_PreviewTextInput_1(object sender, TextCompositionEventArgs e)
+        {
+            if (char.IsDigit(e.Text, e.Text.Length - 1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

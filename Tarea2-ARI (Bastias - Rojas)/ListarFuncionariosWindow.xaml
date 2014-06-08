@@ -6,7 +6,17 @@
         <Grid HorizontalAlignment="Left" Height="270" Margin="36,10,0,0" VerticalAlignment="Top" Width="623">
             <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="422,304,0,-64" VerticalAlignment="Top" Width="177" Height="30" RenderTransformOrigin="1.862,-0.636" Click="btnVolver_Click"/>
             <TextBlock x:Name="txtPrincipal" HorizontalAlignment="Left" Margin="22,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="577" FontSize="30" TextAlignment="Center"><Run Language="es-cl" Text="KIOSKO SYSTEM - LISTAR FUNCIONARIOS"/></TextBlock>
-            <ListBox HorizontalAlignment="Left" Height="197" Margin="22,93,0,-20" VerticalAlignment="Top" Width="577"/>
-        </Grid>
+            <ListView Margin="35,84,24,-11" x:Name="listViewUsuarios">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Nº" Width="25" DisplayMemberBinding="{Binding Num}" />
+                        <GridViewColumn Header="RUT" Width="80" DisplayMemberBinding="{Binding Rut}" />
+                        <GridViewColumn Header="Nombre Completo" Width="180" DisplayMemberBinding="{Binding Nombre}" />
+                        <GridViewColumn Header="Carrera" Width="150" DisplayMemberBinding="{Binding Carrera}" />
+                        <GridViewColumn Header="" Width="118" DisplayMemberBinding="{Binding Opciones}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>        
     </Grid>
 </Window>

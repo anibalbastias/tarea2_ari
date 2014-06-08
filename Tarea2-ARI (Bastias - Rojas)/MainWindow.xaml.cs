@@ -60,7 +60,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
         private void btnInicializar_Click(object sender, RoutedEventArgs e)
         {
             
-            string fic = path+@"\assets\productos.txt";  //lee el archivo productos.txt               
+            string fic = path+@"\assets\hashing_lineal\productos.txt";  //lee el archivo productos.txt               
 
             System.IO.StreamReader sr = new System.IO.StreamReader(fic);  //carga el fichero en la variable sr para poder manipularlo
 
@@ -73,7 +73,22 @@ namespace Tarea2_ARI__Bastias___Rojas_
             string binary;
             string sub_string;
             int capacidad = 3;
+
             // fin inicializacion de variables
+
+
+            //creacion de archivos estaticos
+
+            FileInfo est;
+            StreamWriter writer_estatico;
+            for (int var = 0; var <= 9; var++)
+            {
+                est = new FileInfo(path + @"\assets\hashing_estatico\estatico" + var + ".txt");
+                writer_estatico = est.AppendText();
+                writer_estatico.Close();
+            }
+
+            //fin creacion de archivos estaticos
 
 
             //Console.WriteLine("cantidad de lineas - " + Contador(@"C:\Users\casa\Desktop\universidad\2014-1 sem\ari\tarea2\t_anibal\tarea2_ari\Tarea2-ARI (Bastias - Rojas)\assets\productos.txt"));
@@ -93,14 +108,14 @@ namespace Tarea2_ARI__Bastias___Rojas_
                 valor = Convert.ToInt32(sub_string); // convierte el numero string a numero int
                 binary = Convert.ToString(valor, 2); // convierte el entero a binario
 
-                if (System.IO.File.Exists(path + @"\assets\resultado" + j + ".txt"))
+                if (System.IO.File.Exists(path + @"\assets\hashing_lineal\resultado" + j + ".txt"))
                 {
 
 
-                    if (Contador(path + @"\assets\resultado" + j + ".txt") < capacidad)
+                    if (Contador(path + @"\assets\hashing_lineal\resultado" + j + ".txt") < capacidad)
                     {
 
-                        f = new FileInfo(path + @"\assets\resultado" + j + ".txt");
+                        f = new FileInfo(path + @"\assets\hashing_lineal\resultado" + j + ".txt");
 
                         writer = f.AppendText();
                         writer.WriteLine(texto);
@@ -110,7 +125,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
                     else
                     {
 
-                        f = new FileInfo(path + @"\assets\resultado" + j + ".txt");
+                        f = new FileInfo(path + @"\assets\hashing_lineal\resultado" + j + ".txt");
 
 
 
@@ -124,7 +139,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
                 }
                 else
                 {
-                    f = new FileInfo(path + @"\assets\resultado" + j + ".txt");
+                    f = new FileInfo(path + @"\assets\hashing_lineal\resultado" + j + ".txt");
 
 
                     writer = f.AppendText();

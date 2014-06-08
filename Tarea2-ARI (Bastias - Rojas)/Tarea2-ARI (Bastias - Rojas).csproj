@@ -45,6 +45,7 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationClient" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -54,9 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Funcionario.cs" />
     <Compile Include="HashEstatico.cs" />
     <Compile Include="HashLineal.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="Secuencial.cs" />
+    <Compile Include="Venta.cs" />
     <Compile Include="VentasWindow.xaml.cs">
       <DependentUpon>VentasWindow.xaml</DependentUpon>
     </Compile>
@@ -149,6 +153,9 @@
   <ItemGroup>
     <Folder Include="assets\" />
     <Folder Include="hash\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

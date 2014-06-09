@@ -19,10 +19,10 @@ namespace Tarea2_ARI__Bastias___Rojas_
     /// </summary>
     public partial class VentasWindow : Window
     {
-        public MainWindow mw = new MainWindow();
-        public HashLineal hl = new HashLineal();
-        public HashEstatico he = new HashEstatico();
-        public Secuencial se = new Secuencial();
+        MainWindow mw = new MainWindow();
+        HashLineal hl = new HashLineal();
+        HashEstatico he = new HashEstatico();
+        Secuencial se = new Secuencial();
 
         string rut_venta = "";
         int cont = 1;

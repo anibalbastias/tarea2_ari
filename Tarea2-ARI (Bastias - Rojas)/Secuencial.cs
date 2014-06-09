@@ -11,10 +11,6 @@ namespace Tarea2_ARI__Bastias___Rojas_
     class Secuencial
     {
         // Atributos de la clase
-        private FileStream stream;
-        private string filename;
-        private bool abierto = false;
-        private int i;
 
         // Constructor: Recibe el nombre del archivo e inicia apertura (con control de errores)
         public Secuencial()

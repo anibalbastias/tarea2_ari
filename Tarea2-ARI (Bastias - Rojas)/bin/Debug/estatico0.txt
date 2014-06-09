@@ -2,3 +2,17 @@
 11180775-2&Rosario&Abatista&Ingenieria Civil Electronica
 11180775-2&Rosario&Abatista&Ingenieria Civil Electrica
 11180775-2&Rosario&Abatista&Muñoz&Ingenieria Civil Electrica
+0&asd&Confiteria&123&123
+0&asd&Confiteria&12&123
+0&asd&Confiteria&123&122
+0&qwe&Confiteria&123&123
+0&sad&Lacteos&23&23
+0&sad&Confiteria&34&24
+0&qwe&Lacteos&234&234
+0&asd&Confiteria&234&234
+0&asd&Confiteria&234&234
+0&asd&Confiteria&2&2
+0&asd&Bebestible&1&1
+0&asd&Lacteos&23&23
+0&qwe&Bebestible&123&12
+0&qwe&Bebestible&123&123

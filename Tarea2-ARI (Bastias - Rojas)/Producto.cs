@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tarea2_ARI__Bastias___Rojas_
 {
-    class Producto
+    public class Producto
     {
         public int id { get; set; }
         public string nombre { get; set; }

@@ -4,14 +4,49 @@
         Title="Kiosko System - Tarea 2 ARI (Bastias - Rojas)" Height="400" Width="700" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxWidth="700" MaxHeight="400" MinWidth="700" MinHeight="400" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
         <Grid HorizontalAlignment="Left" Height="270" Margin="36,10,0,0" VerticalAlignment="Top" Width="623">
-            <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="429,304,0,-64" VerticalAlignment="Top" Width="184" Height="30" RenderTransformOrigin="1.862,-0.636" Click="btnVolver_Click"/>
-            <TextBlock x:Name="txtPrincipal" HorizontalAlignment="Left" Margin="22,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="577" FontSize="30" TextAlignment="Center"><Run Language="es-cl" Text="KIOSKO SYSTEM - VENTAS PRODUCTOS"/></TextBlock>
-            <ListBox x:Name="listProductos" HorizontalAlignment="Left" Height="197" Margin="22,93,0,-20" VerticalAlignment="Top" Width="396"/>
-            <Button x:Name="btnPagar" Content="PAGAR" HorizontalAlignment="Left" Margin="240,304,0,-64" VerticalAlignment="Top" Width="177" Height="30" RenderTransformOrigin="1.862,-0.636" Click="btnPagar_Click"/>
-            <TextBlock x:Name="txtPrincipal_Copy" HorizontalAlignment="Left" Margin="418,246,0,-20" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="195" FontSize="28" TextAlignment="Center"><Run Language="es-cl" Text="TOTAL: "/><Run FontWeight="Bold" Language="es-cl" Text="$2.000"/></TextBlock>
-            <Button x:Name="btnFuncionariosDestacados" Content="Funcionarios Destacados" HorizontalAlignment="Left" Margin="429,93,0,0" VerticalAlignment="Top" Width="184" Height="30" RenderTransformOrigin="1.862,-0.636" Click="btnFuncionariosDestacados_Click"/>
-            <TextBlock x:Name="txtPrincipal_Copy1" HorizontalAlignment="Left" Margin="428,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="118" Width="195" FontSize="20" FontWeight="Bold"><Run Language="es-cl" Text="Productos:"/></TextBlock>
-            <ListBox x:Name="listCompras" HorizontalAlignment="Left" Height="84" Margin="429,157,0,0" VerticalAlignment="Top" Width="184"/>
+            <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="439,304,0,-74" VerticalAlignment="Top" Width="184" Height="40" RenderTransformOrigin="1.862,-0.636" Click="btnVolver_Click"/>
+            <TextBlock x:Name="txtPrincipal" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="577" FontSize="30" TextAlignment="Center"><Run Language="es-cl" Text="KIOSKO SYSTEM - VENTAS PRODUCTOS"/></TextBlock>
+            <Button x:Name="btnPagar" Content="CONFIRMAR VENTA" HorizontalAlignment="Left" Margin="163,304,0,-74" VerticalAlignment="Top" Width="250" Height="40" RenderTransformOrigin="1.862,-0.636" Click="btnPagar_Click"/>
+            <TextBlock x:Name="txtTotal" HorizontalAlignment="Left" Margin="439,255,0,-29" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="174" FontSize="28" TextAlignment="Center"><Run Language="es-cl" Text="TOTAL: $0"/></TextBlock>
+            <Button x:Name="btnFuncionariosDestacados" Content="Funcionarios &#xD;&#xA;Destacados" HorizontalAlignment="Left" Margin="17,304,0,-74" VerticalAlignment="Top" Width="129" Height="40" RenderTransformOrigin="1.862,-0.636" Click="btnFuncionariosDestacados_Click"/>
+            <TextBlock x:Name="txtPrincipal_Copy1" HorizontalAlignment="Left" Margin="439,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="184" FontSize="20" FontWeight="Bold"><Run Language="es-cl" Text="Vendedor:"/></TextBlock>
+            <ListView Margin="17,70,210,140" x:Name="listViewFuncionarios">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Nº" Width="25" DisplayMemberBinding="{Binding Num}" />
+                        <GridViewColumn Header="RUT" Width="80" DisplayMemberBinding="{Binding Rut}" />
+                        <GridViewColumn Header="Nombre" Width="180" DisplayMemberBinding="{Binding Nombre}" />
+                        <GridViewColumn Header="" Width="63" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Agregar" Width="50" Height="30" Click="Button_Click_2"  CommandParameter="{Binding}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListView Margin="17,143,210,-19" x:Name="listViewProductos">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Nº" Width="25" DisplayMemberBinding="{Binding Num}" />
+                        <GridViewColumn Header="Producto" Width="80" DisplayMemberBinding="{Binding Producto}" />
+                        <GridViewColumn Header="Tipo" Width="80" DisplayMemberBinding="{Binding Tipo}" />
+                        <GridViewColumn Header="Precio" Width="60" DisplayMemberBinding="{Binding Precio}" />
+                        <GridViewColumn Header="Stock" Width="60" DisplayMemberBinding="{Binding Stock}" />
+                        <GridViewColumn Header="" Width="63" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Agregar" Width="50" Height="30" Click="Button_Click_1"  CommandParameter="{Binding}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
+        <TextBlock x:Name="txtBlockFuncionario" HorizontalAlignment="Left" Margin="479,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="110" Margin="479,155,0,0" Stroke="Black" VerticalAlignment="Top" Width="180"/>
+        <TextBlock x:Name="listaVentas" HorizontalAlignment="Left" Margin="488,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="90"><Run/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>

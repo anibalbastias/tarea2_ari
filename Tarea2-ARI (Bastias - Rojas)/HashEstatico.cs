@@ -19,7 +19,6 @@ namespace Tarea2_ARI__Bastias___Rojas_
 
         }
 
-        //Sobrecarga del metodo.
         public void insertarFuncionario(Funcionario funcionario)
         {
             try //Util para manejar exepciones

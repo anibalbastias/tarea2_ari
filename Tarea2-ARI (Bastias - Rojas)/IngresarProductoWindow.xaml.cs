@@ -19,7 +19,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
     /// </summary>
     public partial class IngresarProductoWindow : Window
     {
-        //HashLineal<4,4> hl = new HashLineal<4,4>();
+        HashLineal hl = new HashLineal();
 
         public IngresarProductoWindow()
         {
@@ -61,7 +61,7 @@ namespace Tarea2_ARI__Bastias___Rojas_
                 Producto prod1 = new Producto(txtBlockNombre.Text.ToString(), comboTipo.Text.ToString(),
                     Int32.Parse(txtBoxPrecio.Text.ToString()), Int32.Parse(txtBoxStock.Text.ToString()));
 
-                //hl.insertarProducto(prod1);
+                hl.insertarProducto(prod1);
 
                 ProductosWindow window = new ProductosWindow();
                 window.Show();
